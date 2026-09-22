@@ -1,0 +1,13 @@
+.wgr-admin .wgr-review-form {
+	background: #fff;
+	padding: 1em 1.5em;
+	border: 1px solid #ccd0d4;
+	margin-bottom: 2em;
+}
+
+.wgr-admin .wgr-code-sample {
+	background: #f6f7f7;
+	border: 1px solid #ccd0d4;
+	padding: 1em;
+	overflow-x: auto;
+}
