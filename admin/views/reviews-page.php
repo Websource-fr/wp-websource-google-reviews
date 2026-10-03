@@ -106,4 +106,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+
+	<?php WGR_Support_Box::render(); ?>
 </div>

@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:       Websource Google Reviews
- * Plugin URI:        https://www.websource.fr/
+ * Plugin URI:        https://www.websource.fr/modules-wordpress/module-avis-google-wordpress-optimise-seo
  * Description:       Publie une page publique d'avis clients Google (collés manuellement ou saisis un par un) avec injection JSON-LD AggregateRating réelle, et un bloc "avis du magasin" optionnel sur les fiches produit WooCommerce sans avis.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      8.1
  * Author:            Websource
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Sécurité : accès direct interdit.
 }
 
-define( 'WGR_VERSION', '1.0.0' );
+define( 'WGR_VERSION', '1.1.0' );
 define( 'WGR_PLUGIN_FILE', __FILE__ );
 define( 'WGR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WGR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -58,11 +58,11 @@ function wgr_init_plugin(): void {
 	if ( is_admin() ) {
 		require_once WGR_PLUGIN_DIR . 'admin/class-wgr-admin.php';
 		WGR_Admin::init();
+		require_once WGR_PLUGIN_DIR . 'admin/class-wgr-support-box.php';
+		WGR_Support_Box::init();
 	}
 }
 add_action( 'plugins_loaded', 'wgr_init_plugin' );
-
-register_activation_hook( __FILE__, array( 'WGR_Rewrite', 'flush_on_activation' ) );
 
 /**
  * Point d'intégration public : retourne le bloc aggregateRating (tableau PHP)

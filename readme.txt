@@ -4,7 +4,7 @@ Tags: google reviews, avis clients, schema, aggregaterating, woocommerce
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,7 +58,15 @@ Le format du copier-coller Google n'est pas un standard garanti. Après un impor
 
 Non, il est volontairement affiché sans balisage `Review`/`AggregateRating` au niveau du produit, pour ne jamais laisser croire qu'il s'agit d'avis sur ce produit précis.
 
+= Que fait l'encart « Besoin d'aller plus loin ? » dans l'administration ? =
+
+Il propose aux administrateurs (capacité `manage_options`), uniquement sur l'écran principal du plugin, de contacter Websource, l'agence éditrice, pour un accompagnement sur mesure. Il n'apparaît jamais sur le site public ni dans les e-mails, se masque pour 30 jours par utilisateur (bouton « Masquer ») et ne fait aucune requête externe. Seul un clic sur « Nous contacter » ou « Prendre rendez-vous » ouvre le site websource.fr, avec dans l'adresse le nom du plugin, sa version, la version de WordPress et l'adresse de votre site (domaine uniquement) pour faciliter la réponse de Websource.
+
 == Changelog ==
+
+= 1.1.0 =
+* Correctif : l'activation du plugin provoquait une erreur fatale (crochet d'activation invalide), corrigé.
+* Nouveau : encart « Besoin d'aller plus loin ? » (accompagnement Websource) sur l'écran principal du plugin, réservé aux administrateurs, masquable 30 jours par utilisateur. Au clic sur « Nous contacter » / « Prendre rendez-vous », le nom et la version du plugin, la version de WordPress et le domaine du site sont transmis à Websource via l'URL (paramètres utm_* et ws_*). Aucune requête externe automatique.
 
 = 1.0.0 =
 * Version initiale.
